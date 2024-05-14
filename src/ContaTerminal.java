@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class ContaTerminal {
     public static void main(String[] args) {
-
+try {
     Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
 
     System.out.println("Criar conta!");
@@ -28,7 +28,10 @@ public class ContaTerminal {
     String saldoFormatado = df.format(saldo);
 
     System.out.println("Olá, " + nome + " " + sobrenome + ", " + "obrigado por criar uma conta em nosso banco, sua Agência é" + " " + agencia + ", conta " + conta + " e seu saldo R$ " + saldoFormatado + " já está disponível para saque. ");
-    
+}
+catch (java.util.InputMismatchException e){
+    System.err.println("Expressao o valor decimal com ponto ''.'' ");
+} 
 }
 }
 
